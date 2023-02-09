@@ -1,26 +1,38 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import Reviewpopup from '../components/Reviewpopup';
-import Loginpopup from '../components/LoginPopup';
 import { CheckLoggedInUser } from '../session/user';
 import { BsFillHandThumbsUpFill } from 'react-icons/bs';
 import { BsFillHandThumbsDownFill } from 'react-icons/bs';
 
 const Recension = ({ data }) => {
-    const [wRate, setWRate] = useState(0);
-    const [lRate, setLRate] = useState(0);
+    const [likeDis, setlikeDis] = useState({ like: 0, dislike: 0 });
     const [Showreviewpopup, setShowreviewpopup] = useState(false);
     const [isLoggedin, setisLoggedin] = useState(false);
     useEffect(() => {
         setisLoggedin(CheckLoggedInUser());
     }, []);
 
+    useEffect(() => {
+        const likesDisliked = { like: 0, dislike: 0 };
+        for (let i = 0; i < data.length; i++) {
+            if (data[i].rating === true) {
+                likesDisliked.like++;
+            } else {
+                likesDisliked.dislike++;
+            }
+        }
+        setlikeDis(likesDisliked);
+    }, [data]);
+
     return (
         <div>
             <div>
                 <div className="relative">
                     <section id="hero" class=" pb-10"></section>
-                    <h2 className="text-3xl ml-3 font-bold">Reviews</h2>{' '}
+                    <h2 className="text-3xl ml-3 font-bold">
+                        Reviews ---- {likeDis.like} {likeDis.dislike}
+                    </h2>{' '}
                     {/* lägg till variabel för totala recensioner */}
                     <hr className="my-2 border-blue-300"></hr>
                 </div>
@@ -48,9 +60,9 @@ const Recension = ({ data }) => {
                     <ul>
                         {data.map((post) => (
                             <li key={post.id}>
-                                {post.rating
+                                {/* {post.rating
                                     ? setWRate(wRate + 1)
-                                    : setLRate(lRate + 1)}
+                                    : setLRate(lRate + 1)} */}
                                 <div class="ml-4">
                                     <section id="hero" class=" pb-3"></section>
                                     <div className="flex container w-3/4 mx-20 px-4 border-4 rounded-lg  border-blue-500 bg-white">
