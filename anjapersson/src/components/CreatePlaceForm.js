@@ -1,24 +1,29 @@
 import { useState } from 'react';
 import { APICreatePlace } from '../api/place';
-import { useNavigate } from 'react-router-dom';
+import { CheckLoggedInUser } from '../session/user';
+
 
 const CreatePageForm = ({ categorys }) => {
     const [placeInfo, setPlaceInfo] = useState({
         name: '',
         location: '',
         address: '',
-        category: '',
+        category: 'Restaurant',
         country: '',
-        pic: 'inteFixat',
+        pic: '',
     });
 
-    const history = useNavigate();
+    
     const submitHandler = (e) => {
         e.preventDefault();
 
-        APICreatePlace(placeInfo);
+            APICreatePlace(placeInfo);
 
-        history.back();
+            if(window.confirm("Your Location has been created")){
+                window.history.back();
+              } 
+       
+        
     };
 
     return (
@@ -48,18 +53,21 @@ const CreatePageForm = ({ categorys }) => {
                                 required
                             ></input>
                             <p className="my-2 font-medium text-lg">
-                                Upload pictures
+                                Picture linq
                             </p>
-                            <div className="border border-black rounded-lg h-28 flex flex-col justify-center items-center">
-                                <div action="/action_page.php">
-                                    <input
-                                        type="file"
-                                        id="files"
-                                        name="files"
-                                        multiple
-                                    />
-                                </div>
-                            </div>
+                            <input
+                                onChange={(e) =>
+                                    setPlaceInfo({
+                                        ...placeInfo,
+                                        pic: e.target.value,
+                                    })
+                                }
+                                value={placeInfo.pic}
+                                type="text"
+                                id="Pic"
+                                className="py-1 border rounded-lg bg-white border-black text-black text-lg"
+                                required
+                            ></input>
                         </div>
 
                         <div className="w-96 flex flex-col px-4">
@@ -112,7 +120,7 @@ const CreatePageForm = ({ categorys }) => {
                                 </div>
                                 <div>
                                     <p className="mt-2 ml-4 font-medium text-lg">
-                                        Type
+                                        Category
                                     </p>
                                     <select
                                         className="py-1.5 ml-4 w-32 border rounded-lg bg-white border-black text-black text-lg"
@@ -121,7 +129,7 @@ const CreatePageForm = ({ categorys }) => {
                                         onChange={(e) =>
                                             setPlaceInfo({
                                                 ...placeInfo,
-                                                category: e.target.value,
+                                                category: e.target.value,                                               
                                             })
                                         }
                                     >

@@ -39,7 +39,7 @@ const NavBar = () => {
                     <div className=" flex flex-col items-center">
                         <SlUserFollow className="text-white text-3xl" />
                         <a
-                            href="/createNewAccount"
+                            href="/createaccount"
                             className=" text-white flex flex-row"
                         >
                             New Account
@@ -54,7 +54,7 @@ const NavBar = () => {
                     <div className=" flex flex-col items-center">
                         <MdOutlinePlace className="text-white text-3xl" />
                         <a
-                            href="/createNewPlace"
+                            href="/createplace"
                             className=" text-white flex flex-row"
                         >
                             New Location
@@ -62,7 +62,7 @@ const NavBar = () => {
                     </div>
                     <div className=" flex flex-col items-center bg-fuchsia-400">
                         <GrTest className="  text-3xl" />
-                        <a href="/choosenPlace" className="  flex flex-row">
+                        <a href="/searchpage" className="  flex flex-row">
                             Test
                         </a>
                     </div>
