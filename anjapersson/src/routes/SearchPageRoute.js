@@ -8,7 +8,7 @@ const SearchPageRoute = () => {
     const [locations, setLocations] = useState({});
 
     const getData = async (searchValue) => {
-        if (searchValue == undefined || searchValue == null) {
+        if (searchValue === undefined || searchValue == null) {
             searchValue = ' ';
         }
 
