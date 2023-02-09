@@ -10,20 +10,20 @@ const CreatePageForm = ({ categorys }) => {
         address: '',
         category: 'Restaurant',
         country: '',
-        pic: 'inteFixat',
+        pic: '',
     });
 
     
     const submitHandler = (e) => {
         e.preventDefault();
 
+            APICreatePlace(placeInfo);
+
+            if(window.confirm("Your Location has been created")){
+                window.history.back();
+              } 
+       
         
-
-        APICreatePlace(placeInfo);
-
-        if(window.confirm("Your Location has been created")){
-            window.history.back();
-          }
     };
 
     return (
