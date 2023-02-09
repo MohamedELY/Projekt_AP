@@ -3,6 +3,7 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import { APIGetLocaionBySearch } from '../api/location';
 import { useState, useEffect } from 'react';
+import { SetChoosenPlace } from '../session/choosenPlace';
 
 const SearchPageRoute = () => {
     const [locations, setLocations] = useState({});
@@ -20,6 +21,11 @@ const SearchPageRoute = () => {
     useEffect(() => {
         getData();
     }, []);
+
+    function SelectedPlace(id) {
+        SetChoosenPlace(id);
+        window.open('/content', '_self');
+    }
 
     return (
         <div>
@@ -42,9 +48,7 @@ const SearchPageRoute = () => {
                                 {locations.length > 0 && (
                                     <ul>
                                         {locations.map((place) => (
-                                            <li key={place.id}>
-                                                <a href="#">{place.place}</a>
-                                            </li> //href to the page of the place? maybe i dunno
+                                            <li value={place.id} key={place.id}><button onClick={() => SelectedPlace(place.id)}>{place.place}</button></li>
                                         ))}
                                     </ul>
                                 )}
