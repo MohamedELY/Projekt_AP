@@ -2,7 +2,7 @@ const Content = ({ data }) => {
     //console.log(data);
 
     return (
-        <div className="flex center">
+        <div className="flex center pt-10">
             {data.pic && (
                 <img
                     className="w-64 h-64 ml-20 rounded-lg"

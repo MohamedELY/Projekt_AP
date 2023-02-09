@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import Reviewpopup from '../components/Reviewpopup';
+import Loginpopup from '../components/LoginPopup';
 import { CheckLoggedInUser } from '../session/user';
 import { BsFillHandThumbsUpFill } from 'react-icons/bs';
 import { BsFillHandThumbsDownFill } from 'react-icons/bs';
@@ -16,6 +17,7 @@ const Recension = ({ data }) => {
         <div>
             <div>
                 <div className="relative">
+                    <section id="hero" class=" pb-10"></section>
                     <h2 className="text-3xl ml-3 font-bold">Reviews</h2>{' '}
                     {/* lägg till variabel för totala recensioner */}
                     <hr className="my-2 border-blue-300"></hr>
