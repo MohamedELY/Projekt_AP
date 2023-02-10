@@ -2,8 +2,12 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import Reviewpopup from '../components/Reviewpopup';
 import { CheckLoggedInUser } from '../session/user';
-import { BsFillHandThumbsUpFill } from 'react-icons/bs';
-import { BsFillHandThumbsDownFill } from 'react-icons/bs';
+import {
+    BsFillHandThumbsUpFill,
+    BsHandThumbsDown,
+    BsHandThumbsUp,
+    BsFillHandThumbsDownFill,
+} from 'react-icons/bs';
 
 const Recension = ({ data }) => {
     const [likeDis, setlikeDis] = useState({ like: 0, dislike: 0 });
@@ -30,9 +34,16 @@ const Recension = ({ data }) => {
             <div>
                 <div className="relative">
                     <section id="hero" class=" pb-10"></section>
-                    <h2 className="text-3xl ml-3 font-bold">
-                        Reviews ---- {likeDis.like} {likeDis.dislike}
-                    </h2>{' '}
+                    <div class="flex items-center">
+                        <h2 className="text-3xl ml-3 font-bold">
+                            Reviews / {likeDis.like}
+                        </h2>
+                        <BsHandThumbsUp className="w-6 h-6" />
+                        <h2 className="text-3xl ml-3 font-bold">
+                            - {likeDis.dislike}
+                        </h2>
+                        <BsHandThumbsDown className="w-6 h-6" />
+                    </div>
                     {/* lägg till variabel för totala recensioner */}
                     <hr className="my-2 border-blue-300"></hr>
                 </div>
