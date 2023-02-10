@@ -1,57 +1,87 @@
-import React from 'react';
+import { useState } from 'react';
+import SearchBar from './SearchBar';
+import { APIGetLocaionBySearch } from '../api/location';
+
+import { SetChoosenPlace } from '../session/choosenPlace';
 
 const HomeSearch = () => {
+    const [locations, setLocations] = useState({});
+
+    const getData = async (searchValue) => {
+        if (searchValue === undefined || searchValue == null) {
+            searchValue = ' ';
+        }
+        const data = await APIGetLocaionBySearch(searchValue);
+        console.log(data);
+        setLocations(data);
+    };
+
+
+
+    function SelectedPlace(id) {
+        SetChoosenPlace(id);
+        window.open('/content', '_self');
+    }
+
+
     return (
-        <section id="hero" className=" pb-72">
+        <section id="hero" className=" pb-72 ">
             <div className="flex flex-row justify-center">
-                <div className="flex flex-col text-center">
-                    <div className="flex items-end justify-end">
+                <div className="flex flex-col justify-center">
+                    <div className="flex items-end justify-center ">
                         <img
                             src="/img/tajmahal.png"
                             alt=""
-                            className="h-2/6 rounded-md mr-2 opacity-60"
+                            className="h-20  rounded-md  opacity-60"
                         ></img>
                         <img
                             src="/img/frihetsgudinnan.jpg"
                             alt=""
-                            className="h-3/6 rounded-md mr-2 opacity-60"
+                            className="h-3/6 rounded-md  opacity-60"
                         ></img>
                         <img
                             src="/img/eiffeltornet.jpg"
                             alt=""
-                            className="h-3/5 rounded-md mr-2 opacity-60"
+                            className="h-3/5 rounded-md  opacity-60"
                         ></img>
                         <img
                             src="/img/bigben.jpg"
                             alt=""
-                            className="h-4/5 rounded-md mr-2 opacity-60"
+                            className="h-4/5 rounded-md opacity-60 "
                         ></img>
                     </div>
+                
+                     
 
-                    <div className="rounded-md shadow-sm">
-                        <input
-                            type="search"
-                            className="form-input py-2 px-3 block w-full leading-5 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-full placeholder-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800"
-                            placeholder="Where do you want to visit?"
-                        ></input>
-                    </div>
+                <div className='flex justify-center'>
+                    <SearchBar findLocations={getData} />
+                </div>                     
+                   
+                <div className='flex justify-center mt-4'>
+                    {locations.length > 0 && (
+                        <div className='grid gap-1 grid-cols-2'>
+                            {locations.map((place) => (
+                                <div value={place.id} key={place.id}>
+                                    <div className=" text-white flex flex-col">
+                                        <button className='border border-black p-1 bg-gradient-to-r from-blue-400 to-neutral-800 hover:from-blue-500 hover:to-neutral-900 rounded-lg' onClick={() => SelectedPlace(place.id)}>    
+                                            <p className='font-bold text-2xl'>{place.place}</p>
+                                                <div className='flex flex-row justify-between'>
+                                                    <p className='italic'>{place.location}</p>
+                                                    <p>{place.country}</p>
+                                                </div>
+                                        </button>
+                                    </div>
+                                </div>    
+                            ))}
+                        </div> 
+                    )}
+                </div>
+                                
+                                       
 
-                    <div className="flex items-center justify-center mt-4">
-                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-full">
-                            Hotel
-                        </button>
-                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-full ml-2">
-                            Things to do
-                        </button>
-                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-full ml-2">
-                            Restaurants
-                        </button>
-                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-full ml-2">
-                            <a href="/createNewPlace" className="text-white">
-                                Add a location
-                            </a>
-                        </button>
-                    </div>
+
+
+            
                 </div>
             </div>
         </section>

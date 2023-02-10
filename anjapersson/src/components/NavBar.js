@@ -4,7 +4,6 @@ import { SlUserFollow } from 'react-icons/sl';
 import { BsPencil } from 'react-icons/bs';
 import { MdOutlinePlace } from 'react-icons/md';
 import { TfiUser } from 'react-icons/tfi';
-import { GrTest } from 'react-icons/gr';
 import { CheckLoggedInUser, LogOutUser } from '../session/user';
 
 const NavBar = () => {
@@ -45,12 +44,7 @@ const NavBar = () => {
                             New Account
                         </a>
                     </div>
-                    <div className=" flex flex-col items-center">
-                        <BsPencil className="text-white text-3xl" />
-                        <a href="/review" className=" text-white flex flex-row">
-                            Review
-                        </a>
-                    </div>
+                  
                     <div className=" flex flex-col items-center">
                         <MdOutlinePlace className="text-white text-3xl" />
                         <a
@@ -60,12 +54,7 @@ const NavBar = () => {
                             New Location
                         </a>
                     </div>
-                    <div className=" flex flex-col items-center bg-fuchsia-400">
-                        <GrTest className="  text-3xl" />
-                        <a href="/searchpage" className="  flex flex-row">
-                            Test
-                        </a>
-                    </div>
+                    
                 </div>
                 <div className="hidden md:block p-1 rounded-full bg-gradient-to-tr from-white to-blue-500 hover:from-blue-500 hover:to-white">
                     {isLoggedin ? (
