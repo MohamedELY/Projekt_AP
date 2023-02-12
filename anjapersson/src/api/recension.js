@@ -7,4 +7,24 @@ async function APIGetRecensionByPlaceID(id) {
     return response;
 }
 
-export { APIGetRecensionByPlaceID };
+//Creates a Post
+async function APICreatePost(param) {
+    let url = 'https://localhost:7047/api/Post';
+
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            id: 0,
+            placeId: param.placeId,
+            title: param.title,
+            description: param.description,
+            userId: param.userId,
+            rating: param.rating,
+        }),
+    }).catch((error) => console.error(error));
+}
+
+export { APIGetRecensionByPlaceID, APICreatePost};
