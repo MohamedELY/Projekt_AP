@@ -7,7 +7,6 @@ import LoginRoute from './routes/LoginRoute';
 import CreateAccountRoute from './routes/CreateAccountRoute';
 import CreatePlaceForm from './routes/CreatePlaceRoute';
 import ContentRoute from './routes/ContentRoute';
-import SearchPageRoute from './routes/SearchPageRoute';
 import TestRoute from './routes/TestRoute';
 
 function App() {
@@ -17,7 +16,6 @@ function App() {
                 <Route path="/" element={<HomeRoute />}></Route>
                 <Route path="/login" element={<LoginRoute />}></Route>
                 <Route path="/content" element={<ContentRoute />}></Route>
-                <Route path="/searchPage" element={<SearchPageRoute />}></Route>
                 <Route path="/test" element={<TestRoute />}></Route>
                 <Route
                     path="/createPlace"
