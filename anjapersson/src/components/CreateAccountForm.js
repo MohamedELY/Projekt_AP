@@ -16,7 +16,7 @@ const CreateAccountForm = ({ CreateAcc }) => {
 
     return (
         <form onSubmit={submitHandler}>
-            <section className="py-20 pb-40">
+            <section className="pt-40 pb-40">
                 <div className="flex flex-wrap justify-center">
                     <img
                         src="/img/LogIn.jpg"

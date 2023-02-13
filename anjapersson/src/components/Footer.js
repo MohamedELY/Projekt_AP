@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="bottom-0 w-full fixed p-6 bg-gradient-to-r from-blue-500 to-neutral-900">
+        <footer className="bottom-0 w-full relative p-6 mt-44 mb-0 bg-gradient-to-r from-blue-500 to-neutral-900">
             <div className="flex flex-row  justify-between">
                 <div>
                     <a href="/alextestsida">

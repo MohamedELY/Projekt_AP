@@ -33,7 +33,7 @@ const Recension = ({ data }) => {
         <div>
             <div>
                 <div className="relative">
-                    <section id="hero" class=" pb-10"></section>
+                    <section id="hero" classname=" pb-10 mt-10 flex flex-grow"></section>
                     <div class="flex items-center">
                         <h2 className="text-3xl ml-3 font-bold">
                             Reviews / {likeDis.like}
@@ -52,7 +52,7 @@ const Recension = ({ data }) => {
 
                 {isLoggedin ? (
                     <button
-                        className="bg-blue-500 ml-3 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-full text-white"
+                        className="bg-blue-500 ml-3 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-full mt-10 "
                         onClick={() => setShowreviewpopup(true)}
                     >
                         Leave a review

@@ -23,7 +23,8 @@ const Reviewpopup = () => {
 
 
     const submitClick = () => {
-        
+        window.location.reload();
+        setShowreviewpopup(false);
     };
 
     const cancelClick = () => {

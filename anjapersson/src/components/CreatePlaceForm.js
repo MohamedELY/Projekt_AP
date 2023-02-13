@@ -28,7 +28,7 @@ const CreatePageForm = ({ categorys }) => {
 
     return (
         <form onSubmit={submitHandler}>
-            <section className="pt-24 mb-56">
+            <section className="pt-44 mb-64">
                 <div className="mx-20 md:mx-60">
                     <div className="bg-gradient-to-r from-blue-500 to-neutral-900 p-2 rounded-md drop-shadow-lg">
                         <p className="text-white font-bold drop-shadow-lg">
