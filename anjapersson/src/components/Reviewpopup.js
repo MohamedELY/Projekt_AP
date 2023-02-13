@@ -44,11 +44,11 @@ const Reviewpopup = () => {
     };
 
     return (
-        <div id="test">
+        <div className='fixed top-0 pt-40 flex justify-center w-full h-full bg-black backdrop-blur-sm bg-opacity-60 outline-none overflow-x-hidden overflow-y-auto z-10'>
             {showreviewpopup && (
                 <form onSubmit={submitHandler}>
-                    <div className="flex container fixed top-0 left-0 right-0 bottom-50 z-50 w-96  mx-auto px-4 border-8 rounded-lg  border-blue-500 shadow-2xl bg-slate-200">
-                        <div className="py-4">
+                    <div >
+                        <div className="p-6  border-black border-4 rounded-lg bg-slate-200">
                             <h2 className="font-bold">Rating</h2>
 
                             <div className="flex py-2">
