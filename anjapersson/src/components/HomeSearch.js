@@ -11,9 +11,16 @@ const HomeSearch = () => {
         if (searchValue === undefined || searchValue == null) {
             searchValue = ' ';
         }
+        
         const data = await APIGetLocaionBySearch(searchValue);
+       
+           if (data.length === 0) {
+            window.confirm("Sorry, no place found. Search again...")
+        }
         console.log(data);
         setLocations(data);
+
+     
     };
 
 
@@ -22,6 +29,7 @@ const HomeSearch = () => {
         SetChoosenPlace(id);
         window.open('/content', '_self');
     }
+   
 
 
     return (
