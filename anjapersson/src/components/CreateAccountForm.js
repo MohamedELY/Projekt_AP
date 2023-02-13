@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { APICreateAccount } from '../api/user';
 
-const CreateAccountForm = ({ CreateAcc }) => {
+const CreateAccountForm = () => {
     const [userinfo, setUserInfo] = useState({
         firstName: '',
         lastName: '',
@@ -11,7 +12,10 @@ const CreateAccountForm = ({ CreateAcc }) => {
     const submitHandler = (e) => {
         e.preventDefault();
 
-        CreateAcc(userinfo);
+        APICreateAccount(userinfo);
+        if(window.confirm("Your account has been created")){
+            window.history.back();
+          } 
     };
 
     return (
