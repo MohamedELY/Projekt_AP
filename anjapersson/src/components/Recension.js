@@ -58,7 +58,7 @@ const Recension = ({ data }) => {
                         Leave a review
                     </button>
                 ) : (
-                    <button className="bg-blue-500 ml-3  hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-full ">
+                    <button className="bg-blue-500 ml-3  hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-full mt-10 ">
                         <a href="/login" className="text-white">
                             Sign in
                         </a>
