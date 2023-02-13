@@ -21,11 +21,6 @@ const Reviewpopup = () => {
         rating: '',
     })
 
-
-    const submitClick = () => {
-        window.location.reload();
-    };
-
     const cancelClick = () => {
         window.location.reload();
         setShowreviewpopup(false);
@@ -44,7 +39,7 @@ const Reviewpopup = () => {
     const submitHandler = (e) => {
         e.preventDefault();
 
-        APICreatePost(post);
+        APICreatePost(post)
         console.log(post)
     };
 
@@ -134,7 +129,6 @@ const Reviewpopup = () => {
                                     <button
                                         type="submit"
                                         className=" mt-4 ml-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-                                        onClick={submitClick}
                                     >
                                         Submit
                                     </button>

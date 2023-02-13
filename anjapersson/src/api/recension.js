@@ -24,7 +24,11 @@ async function APICreatePost(param) {
             userId: param.userId,
             rating: param.rating,
         }),
+    }).then((response) => {
+        if (response.ok) {
+            window.location.reload();
+        }
     }).catch((error) => console.error(error));
 }
 
-export { APIGetRecensionByPlaceID, APICreatePost};
+export { APIGetRecensionByPlaceID, APICreatePost };
