@@ -55,7 +55,7 @@ const LoginPopup = ({ Login }) => {
                             <div className="flex flex-wrap justify-center pt-4">
                                 <input
                                     ref={passwordRef}
-                                    type="text"
+                                    type="password"
                                     id="Password"
                                     className="pl-4 pr-10 py-1 border rounded-full bg-white border-black text-black placeholder:italic placeholder:text-slate-400 text-lg"
                                     placeholder="Password"
