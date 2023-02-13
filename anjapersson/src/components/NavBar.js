@@ -35,26 +35,28 @@ const NavBar = () => {
                             Home
                         </a>
                     </div>
-                    <div className=" flex flex-col items-center">
-                        <SlUserFollow className="text-white text-3xl" />
-                        <a
-                            href="/createaccount"
-                            className=" text-white flex flex-row"
-                        >
-                            New Account
-                        </a>
-                    </div>
-                  
-                    <div className=" flex flex-col items-center">
-                        <MdOutlinePlace className="text-white text-3xl" />
-                        <a
-                            href="/createplace"
-                            className=" text-white flex flex-row"
-                        >
-                            New Location
-                        </a>
-                    </div>
-                    
+
+                    {isLoggedin ? (
+                        <div className=" flex flex-col items-center">
+                            <MdOutlinePlace className="text-white text-3xl" />
+                            <a
+                                href="/createplace"
+                                className=" text-white flex flex-row"
+                            >
+                                New Location
+                            </a>
+                        </div>
+                    ) : (
+                        <div className=" flex flex-col items-center">
+                            <SlUserFollow className="text-white text-3xl" />
+                            <a
+                                href="/createaccount"
+                                className=" text-white flex flex-row"
+                            >
+                                New Account
+                            </a>
+                        </div>
+                    )}
                 </div>
                 <div className="hidden md:block p-1 rounded-full bg-gradient-to-tr from-white to-blue-500 hover:from-blue-500 hover:to-white">
                     {isLoggedin ? (
