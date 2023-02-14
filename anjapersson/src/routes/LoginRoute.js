@@ -16,6 +16,10 @@ const LoginRoute = () => {
             SetLoggedInUser(user);
             history(-1);
         }
+        else{
+            window.confirm("Sorry, wrong login credentials. Try again...")
+            window.location.reload()
+        }
     };
 
     return (

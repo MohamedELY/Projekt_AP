@@ -11,19 +11,20 @@ const HomeSearch = () => {
         if (searchValue === undefined || searchValue == null) {
             searchValue = ' ';
         }
+        
         const data = await APIGetLocaionBySearch(searchValue);
+       
+           if (data.length === 0) {
+            window.confirm("Sorry, no place found. Search again...")
+            window.location.reload();
+        }
         console.log(data);
         setLocations(data);
     };
-
-
-
     function SelectedPlace(id) {
         SetChoosenPlace(id);
         window.open('/content', '_self');
     }
-
-
     return (
         <section id="hero" className=" pb-72 ">
             <div className="flex flex-row justify-center">
@@ -49,10 +50,7 @@ const HomeSearch = () => {
                             alt=""
                             className="h-4/5 rounded-md opacity-60 "
                         ></img>
-                    </div>
-                
-                     
-
+                    </div>                 
                 <div className='flex justify-center'>
                     <SearchBar findLocations={getData} />
                 </div>                     
@@ -76,12 +74,6 @@ const HomeSearch = () => {
                         </div> 
                     )}
                 </div>
-                                
-                                       
-
-
-
-            
                 </div>
             </div>
         </section>
