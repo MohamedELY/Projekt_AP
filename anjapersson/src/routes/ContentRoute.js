@@ -11,16 +11,14 @@ const ContentRoute = () => {
     const [contentData, setContentData] = useState(false);
     const [recensionData, setRecensionData] = useState(false);
     let id = CheckChoosenPlace();
-
+    
     useEffect(() => {
         const GetContentdata = async () => {
-            // id ska hämtas utav session storage och bytta ut hård kodningen!#####################################
             let info = await APIGetPlaceByID(id);
             setContentData(info);
         };
 
         const GetRecensiondata = async () => {
-            // id ska hämtas utav session storage och bytta ut hård kodningen!#######################################
             let info = await APIGetRecensionByPlaceID(id);
             setRecensionData(info);
         };
