@@ -10,13 +10,13 @@ import {
 } from 'react-icons/bs';
 
 const Recension = ({ data }) => {
-    const [likeDis, setlikeDis] = useState({ like: 0, dislike: 0 });
     const [Showreviewpopup, setShowreviewpopup] = useState(false);
     const [isLoggedin, setisLoggedin] = useState(false);
     useEffect(() => {
         setisLoggedin(CheckLoggedInUser());
     }, []);
-
+    
+    const [likeDis, setlikeDis] = useState({ like: 0, dislike: 0 });
     useEffect(() => {
         const likesDisliked = { like: 0, dislike: 0 };
         for (let i = 0; i < data.length; i++) {
