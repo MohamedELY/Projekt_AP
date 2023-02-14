@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import { APICreatePlace } from '../api/place';
-import { CheckLoggedInUser } from '../session/user';
-
 
 const CreatePageForm = ({ categorys }) => {
     const [placeInfo, setPlaceInfo] = useState({
@@ -12,18 +10,13 @@ const CreatePageForm = ({ categorys }) => {
         country: '',
         pic: '',
     });
-
-    
+ 
     const submitHandler = (e) => {
         e.preventDefault();
-
             APICreatePlace(placeInfo);
-
             if(window.confirm("Your Location has been created")){
                 window.history.back();
-              } 
-       
-        
+              }    
     };
 
     return (
@@ -35,7 +28,6 @@ const CreatePageForm = ({ categorys }) => {
                             ADD NEW LOCATION
                         </p>
                     </div>
-
                     <div className="flex flex-row flex-wrap justify-center ">
                         <div className="w-96 flex flex-col  px-4 ">
                             <p className="mt-2 font-medium text-lg">Name</p>
@@ -50,10 +42,12 @@ const CreatePageForm = ({ categorys }) => {
                                 type="text"
                                 id="Username"
                                 className="py-1 border rounded-lg bg-white border-black text-black text-lg"
+                                minLength="3"
+                                pattern="^[a-zA-Z]+( [a-zA-Z]+)*$"
                                 required
                             ></input>
                             <p className="my-2 font-medium text-lg">
-                                Picture linq
+                                Picture link
                             </p>
                             <input
                                 onChange={(e) =>
@@ -65,6 +59,7 @@ const CreatePageForm = ({ categorys }) => {
                                 value={placeInfo.pic}
                                 type="text"
                                 id="Pic"
+                                pattern="^[a-zA-Z0-9,-.@~!#$%&*<>?:;_='/()]+(\\s+[a-zA-Z0-9,-.@~!#$%&*<>?:;_='/()]+)*$"
                                 className="py-1 border rounded-lg bg-white border-black text-black text-lg"
                                 required
                             ></input>
@@ -82,6 +77,8 @@ const CreatePageForm = ({ categorys }) => {
                                 value={placeInfo.address}
                                 type="text"
                                 id="Username"
+                                minLength="8"
+                                pattern="^[a-zA-Z]+( [a-zA-Z]+)*$"
                                 className="py-1 border rounded-lg bg-white border-black text-black text-lg"
                                 required
                             ></input>
@@ -96,6 +93,8 @@ const CreatePageForm = ({ categorys }) => {
                                 value={placeInfo.location}
                                 type="text"
                                 id="Username"
+                                minLength="3"
+                                pattern="^[a-zA-Z]+( [a-zA-Z]+)*$"
                                 className="py-1 border rounded-lg bg-white border-black text-black text-lg"
                                 required
                             ></input>
@@ -114,6 +113,8 @@ const CreatePageForm = ({ categorys }) => {
                                         value={placeInfo.country}
                                         type="text"
                                         id="Username"
+                                        minLength="3"
+                                        pattern="^[a-zA-Z]+( [a-zA-Z]+)*$"
                                         className="py-1 w-52 border rounded-lg bg-white border-black text-black text-lg"
                                         required
                                     ></input>

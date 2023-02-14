@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AiOutlineHome } from 'react-icons/ai';
 import { SlUserFollow } from 'react-icons/sl';
-import { BsPencil } from 'react-icons/bs';
 import { MdOutlinePlace } from 'react-icons/md';
 import { TfiUser } from 'react-icons/tfi';
 import { CheckLoggedInUser, LogOutUser } from '../session/user';

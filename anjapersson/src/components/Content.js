@@ -15,7 +15,7 @@ const Content = ({ data }) => {
                 <h2 className="text-xl font-bold mt-2">{data.address}</h2>
             </div>
 
-            <section id="hero" class=" pb-10"></section>
+            <section id="hero" className=" pb-10"></section>
         </div>
     );
 };
