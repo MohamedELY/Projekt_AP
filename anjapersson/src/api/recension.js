@@ -7,6 +7,15 @@ async function APIGetRecensionByPlaceID(id) {
     return response;
 }
 
+//Gets total likes and dislikes for a Place
+async function APIGetRating() {
+    const response = await fetch('https://localhost:7047/api/SearchLocation/rating').then(
+        (res) => res.json()
+    );
+
+    return response;
+}
+
 //Creates a Post
 async function APICreatePost(param) {
     let url = 'https://localhost:7047/api/Post';
@@ -31,4 +40,4 @@ async function APICreatePost(param) {
     }).catch((error) => console.error(error));
 }
 
-export { APIGetRecensionByPlaceID, APICreatePost };
+export { APIGetRecensionByPlaceID, APICreatePost, APIGetRating };
