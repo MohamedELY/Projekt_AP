@@ -8,6 +8,7 @@ import CreateAccountRoute from './routes/CreateAccountRoute';
 import CreatePlaceForm from './routes/CreatePlaceRoute';
 import ContentRoute from './routes/ContentRoute';
 import TestRoute from './routes/TestRoute';
+import ContactUsRoute from './routes/ContactUsRoute';
 
 function App() {
     return (
@@ -25,6 +26,7 @@ function App() {
                     path="/createAccount"
                     element={<CreateAccountRoute />}
                 ></Route>
+                 <Route path="/contactus" element={<ContactUsRoute />}></Route>
             </Routes>
         </div>
     );

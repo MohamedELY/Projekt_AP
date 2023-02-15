@@ -16,31 +16,32 @@ const Footer = () => {
                     <p className=" text-white">© 2023 Anja Pärson </p>
                 </div>
                 <div className="flex space-x-20 justify-end pb-2 pr-10 ">
-                    <div className="flex flex-col space-y-1 text-white">
-                        <a href="/" className="text-white font-bold">
+                    <div className="flex flex-col space-y-1 text-gray-400">
+                        <a href="/" className=" font-bold">
                             ABOUT ANJA PÄRSON
                         </a>
-                        <a href="/" className="text-white hover:opacity-90">
-                            About us
-                        </a>
-                        <a href="/" className="text-white hover:opacity-90">
-                            Press
-                        </a>
-                        <a href="/" className="text-white hover:opacity-90">
+                        <a href="/contactus" className="text-white text-lg hover:opacity-90">
                             Contact us
                         </a>
+                        <a href="/aboutus" className="hover:opacity-90">
+                            About us
+                        </a>
+                        <a href="/" className="hover:opacity-90">
+                            Press
+                        </a>
+                      
                     </div>
-                    <div className="flex flex-col space-y-1 text-white">
-                        <a href="/" className="text-white font-bold">
+                    <div className="flex flex-col space-y-1 text-gray-400">
+                        <a href="/" className="font-bold">
                             EXPLORE
                         </a>
-                        <a href="/" className="text-white hover:opacity-90">
+                        <a href="/" className="hover:opacity-90">
                             Write a review
                         </a>
-                        <a href="/" className="text-white hover:opacity-90">
+                        <a href="/" className="hover:opacity-90">
                             Add a place
                         </a>
-                        <a href="/" className="text-white hover:opacity-90">
+                        <a href="/" className="hover:opacity-90">
                             Help center
                         </a>
                     </div>
