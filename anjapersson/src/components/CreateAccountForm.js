@@ -50,6 +50,8 @@ const CreateAccountForm = () => {
                             id="Firstname"
                             className="px-4 py-1 w-40 border rounded-full bg-white border-black text-black placeholder:italic placeholder:text-slate-400 text-lg"
                             placeholder="Firstname"
+                            minLength="3"
+                            pattern="^[a-zA-Z]+( [a-zA-Z]+)*$"
                             required
                         ></input>
                     </div>
@@ -64,6 +66,8 @@ const CreateAccountForm = () => {
                             value={userinfo.lastName}
                             type="text"
                             id="Lastname"
+                            minLength="3"
+                            pattern="^[a-zA-Z]+( [a-zA-Z]+)*$"
                             className="px-4 py-1 w-40 border rounded-full bg-white border-black text-black placeholder:italic placeholder:text-slate-400 text-lg"
                             placeholder="Lastname"
                             required
@@ -81,6 +85,8 @@ const CreateAccountForm = () => {
                         value={userinfo.username}
                         type="text"
                         id="Username"
+                        minLength="3"
+                        pattern="^[a-zA-Z0-9,-.@~!#$%&*<>?:;_='/()]+(\\s+[a-zA-Z0-9,-.@~!#$%&*<>?:;_='/()]+)*$"
                         className="px-4 py-1 w-80 border rounded-full bg-white border-black text-black placeholder:italic placeholder:text-slate-400 text-lg"
                         placeholder="Username"
                         required
@@ -97,6 +103,8 @@ const CreateAccountForm = () => {
                         value={userinfo.password}
                         type="password"
                         id="Password"
+                        minLength="8"
+                        pattern="^[a-zA-Z0-9,-.@~!#$%&*<>?:;_='/()]+(\\s+[a-zA-Z0-9,-.@~!#$%&*<>?:;_='/()]+)*$"
                         className="px-4 py-1 w-80 border rounded-full bg-white border-black text-black placeholder:italic placeholder:text-slate-400 text-lg"
                         placeholder="Password"
                         required
