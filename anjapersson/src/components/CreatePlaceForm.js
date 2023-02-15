@@ -53,7 +53,7 @@ const CreatePageForm = ({ categorys }) => {
                                 required
                             ></input>
                             <p className="my-2 font-medium text-lg">
-                                Picture linq
+                                Picture link
                             </p>
                             <input
                                 onChange={(e) =>
