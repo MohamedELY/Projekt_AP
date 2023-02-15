@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { APICreateAccount } from '../api/user';
+import { APICreateAccount, UserExist } from '../api/user';
 
 const CreateAccountForm = () => {
     const [userinfo, setUserInfo] = useState({
@@ -9,13 +9,18 @@ const CreateAccountForm = () => {
         password: '',
     });
 
-    const submitHandler = (e) => {
+    const submitHandler = async (e) => {
         e.preventDefault();
 
-        APICreateAccount(userinfo);
-        if(window.confirm("Your account has been created")){
-            window.history.back();
-          } 
+        if(await UserExist(userinfo.username)){
+            window.alert("Username Already exist, try again")
+        }
+        else{
+            APICreateAccount(userinfo);
+            if(window.confirm("Your account has been created")){
+                window.history.back();
+            } 
+        }
     };
 
     return (

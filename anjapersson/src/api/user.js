@@ -31,4 +31,17 @@ async function APICheckLoginUser(userN, passW) {
     return false;
 }
 
-export { APICheckLoginUser, APICreateAccount };
+async function UserExist(username){
+    let url = 'http://localhost:5271/api/Login/' + username;
+    let response = await fetch(url);
+
+    if(response.statusText === "OK"){
+        return true;
+    }
+    return false;
+  
+}
+
+export { APICheckLoginUser, APICreateAccount, UserExist };
+
+
